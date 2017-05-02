@@ -14,8 +14,8 @@ allprojects {
 ```
 mvn install:install-file -Dfile=network-${tag}.[jar|aar] -DgroupId=org.apache.cordova.plugin -DartifactId=network -Dversion=${tag} -Dpackaging=[jar|aar]
 cd ~/.m2/repository
-git add -f org/apache/cordova/cordova
-git commit -a -m 'create cordova-${tag}'
+git add -f org/apache/cordova/plugin/network
+git commit -a -m 'create network-${tag}'
 git push origin master
 ```
 
