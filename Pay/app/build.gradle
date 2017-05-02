@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            sourceSets {
+                main {
+                    java {
+                        exclude '**/plugin/demo/**'
+                    }
+                }
+            }
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            libraryVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.aar')) {
+                        def fileName = "${rootProject.name}-${defaultConfig.versionName}.aar".toLowerCase()
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:25.3.0'
+//    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+//    compile 'com.google.code.gson:gson:2.8.0'
+
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+
+
+    // {{ supaide repository
+    compile 'org.apache.cordova:cordova:6.1.2'
+    compile 'org.apache.cordova.plugin:network:1.0.5@aar'
+    // }}
+}

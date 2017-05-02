@@ -1,0 +1,38 @@
+gen
+out
+bin
+obj
+proguard
+
+#---- Mac OS X clutter ----
+*.DS_Store
+
+#---- Local config ----
+local.properties
+
+#---- Eclipse settings ----
+.settings
+.classpath
+.project
+project.properties
+lint.xml
+
+#---- Android Studio settings ----
+.idea
+.gradle
+build
+*.eml
+*.iml
+.userlibraries
+/*/local.properties
+/*/out
+/*/*/build
+/*/build
+/*/*/production
+*.iws
+*.ipr
+*~
+*.swp
+*.apk
+*.txt
+
