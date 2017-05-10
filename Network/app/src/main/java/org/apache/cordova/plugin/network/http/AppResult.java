@@ -10,7 +10,7 @@ import java.util.Map;
 public class AppResult {
 
     public static final int ERROR = -1;
-    public static final int OK = 0;
+    public static final int OK = 1;
     public static final int NEED_REFRESH_TOKEN = -2;
     public static final int NEED_LOGIN = -3;
 
