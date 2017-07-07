@@ -17,10 +17,15 @@ cd ~/.m2/repository
 git add -f org/apache/cordova/plugin/network
 git commit -a -m 'create network-${tag}'
 git push origin master
+补充：第一次需要对目录进行git初始化
+  git init
+  git remote add origin git@github.com:supaide/maven-repo.git
+
 ```
 
 ## cordova jar打包并上传至github
 ```
+git clone git@github.com:apache/cordova-android.git 
 cd ${cordova-android}/framework
 git checkout ${tag}
 android update project -p .
